@@ -1,0 +1,10 @@
+# Platform Notes
+
+This project was built on the following platforms. No local code environment is required to review it.
+
+Figma [link]
+[LIST & DESCRIBE APIs / Plugins]
+Google Sheets for the simulated patient database [link]
+Claude Project [link] as a backup/reference implementation of the four-agent system prompt
+
+
