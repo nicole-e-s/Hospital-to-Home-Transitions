@@ -3,7 +3,7 @@
 **Team:** Anshika Shukla, Nicole Sanna, Nicole Zhou, Yuhang Zhou
 **Prototype Tool:** Figma Make
 **Report Referenced:** Phase 3 Final Report (Failure Analysis & Evaluation)
-**Screenshots Folder:** [View all screenshots on GitHub](https://github.com/nicole-e-s/Hospital-to-Home-Transitions/tree/main/docs/screenshots)
+#### **Screenshots Folder:** [View all screenshots on GitHub](https://github.com/nicole-e-s/Hospital-to-Home-Transitions/tree/main/docs/screenshots)
 
 ### **Note:** Screenshots are numbered 1-27 in the order of the prototype flow
 ---
