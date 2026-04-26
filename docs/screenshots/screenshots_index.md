@@ -427,6 +427,36 @@ Shows the human-readable reasoning layer that bridges Agent B's structured JSON 
 
 ---
 
+## Screenshot 28
+**screenshot_file:** `Care Plan Export 28.jpeg`
+ 
+**what_it_shows:**
+The patient-facing Recovery History screen (History tab active), scrolled to show the Medication adherence section. A 7-day summary card reads: "Past 7 days: mostly stable, with one yellow flag on Wednesday for mild dizziness. You've completed daily check-ins and maintained good medication adherence. Based on your check-in responses and medication log." Below the summary is a green-outlined **"Export care plan PDF"** button with a download icon. Below that, an amber flag note reads "Saturday: Evening dose not confirmed." The Daily check-ins section begins below with Mon Apr 5 (green dot, "Breathing easy, no pain") visible and the next entry partially visible.
+ 
+**why_it_matters:**
+This is the artifact generation and export screen — the patient-facing equivalent of a clinical document export. The "Export care plan PDF" button allows the patient to generate a portable, shareable record of their care plan and recovery history, directly from the episodic memory and medication adherence log that Agent B and the Orchestrator maintain. This supports the governance principle that patients can verify the system's care plan against their own records and share it with other providers. It also serves patients with limited health literacy who may need to hand a document to a caregiver or a non-UPMC provider. The export is grounded in Agent A's structured care plan data and Agent B's episodic memory entries — not a general summary generated from scratch.
+ 
+**where_it_is_discussed_in_the_report:**
+- Phase 3, Section 4 (Memory model): episodic memory is an append-only log of daily check-ins — the data source that populates the exportable history.
+- Phase 3, Section 4 (Key safety design choices): "A second GPT-4o pass verifies the generated care plan against the source document before any write to the patient record" — the care plan exported here has passed that verification gate.
+- Phase 3, Section 9 (Risk & Governance): "Over-reliance and care avoidance" risk — the export function supports patients in sharing their care record with other providers rather than relying solely on the system.
+---
+ 
+## Screenshot 29
+**screenshot_file:** `Clinical Export 29.jpeg`
+ 
+**what_it_shows:**
+The staff-facing Patient triage queue screen, dated Saturday April 11, 2026. The header shows "Patient triage queue" with a "Return to Home" button. Four **severity filter tabs** are visible at the top: "All" (selected, filled green), "Red," "Yellow," and "Green" (all unselected, outlined). Two patient cards are visible in this view: James Thompson, 71 (YELLOW badge — "Missed 2 medication doses this week," flagged 5 hours ago, last check-in Today 8:00 AM) and Linda Davis, 69 (GREEN badge — "Routine monitoring," flagged Today, last check-in Today 7:30 AM). At the bottom of the screen, a green-outlined **"Export queue PDF"** button with a download icon is visible.
+ 
+**why_it_matters:**
+This screenshot covers two expectations simultaneously. First, it is the settings/controls/filters screen: the All/Red/Yellow/Green filter tabs at the top are the primary triage controls available to clinical staff, allowing Nurse Rivera to filter the queue by severity tier and focus on the highest-risk patients. This directly implements the four-tier severity model (green / yellow-low / yellow-high / red) in the staff workflow. Second, the "Export queue PDF" button is the staff-facing artifact export — allowing the care coordinator to generate a portable triage record for handoff, clinical review, or audit purposes. James Thompson's YELLOW card ("Missed 2 medication doses this week") also demonstrates the Orchestrator's independent medication adherence tracking in a new patient context, reinforcing that the adherence gap detection described in Failure Case FC-02 applies across the full patient population, not just Margaret Chen.
+ 
+**where_it_is_discussed_in_the_report:**
+- Phase 3, Section 4 (Key safety design choices): the four-tier severity model (green / yellow-low / yellow-high / red) — the filter tabs are the staff-facing implementation of this model.
+- Phase 3, Section 4 (Memory model): "Recalculated adherence state is what allows the Orchestrator to detect critical adherence gaps independently of Agent B's symptom assessment" — James Thompson's "Missed 2 medication doses" card is the Orchestrator's adherence gap detection surfaced in the triage queue.
+- Phase 3, Section 8 (Failure Analysis, FC-02): the adherence tracking gap (self-report accepted without pharmacy cross-check) applies to all patients in the queue, not only the primary test case.
+- Phase 3, Section 7.2 (Ongoing Mitigation): "Escalation logging — Every escalation is logged with triggering data, agent assessment, severity classification, and outcome" — the Export queue PDF supports this audit trail requirement.
+
 ---
 
 # Failure Case Screenshots Index
