@@ -3,6 +3,7 @@
 **Team:** Anshika Shukla, Nicole Sanna, Nicole Zhou, Yuhang Zhou
 **Prototype Tool:** Figma Make
 **Report Referenced:** Phase 3 Final Report (Failure Analysis & Evaluation)
+
 **Note:** Screenshots are numbered 1-27 in the order of the prototype flow
 ---
 
