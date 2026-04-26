@@ -30,7 +30,7 @@ No code execution is required to review this project. The artifacts depend on:
 - A PDF reader (for the report and architecture diagram)
 - Spreadsheet or text viewer (for the evaluation files)
 
-The architecture specification names the LLMs, APIs, and tools that a production version would use (GPT-4o, OpenFDA, FAISS with text-embedding-3-small, NPPES NPI Registry, Epic FHIR), but these are not invoked in the prototype. See `platform_notes.md` for the full platform specification.
+The architecture specification names the LLMs, APIs, and tools that a production version would use (GPT-4o, OpenFDA, FAISS with text-embedding-3-small, NPPES NPI Registry, Epic FHIR), but these are not used in the prototype. See `platform_notes.md` for the full platform specification.
 
 ## Folder guide
 team-project/
