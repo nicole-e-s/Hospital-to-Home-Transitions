@@ -33,31 +33,33 @@ No code execution is required to review this project. The artifacts depend on:
 The architecture specification names the LLMs, APIs, and tools that a production version would use (GPT-4o, OpenFDA, FAISS with text-embedding-3-small, NPPES NPI Registry, Epic FHIR), but these are not used in the prototype. See `platform_notes.md` for the full platform specification.
 
 ## Folder guide
+```
 team-project/
-├── README.md                    This file
-├── AI_USAGE.md                  AI tools used, prompts, manual edits
-├── platform_notes.md            Platform and tool specification
+├── README.md                       This file
+├── AI_USAGE.md                     AI tools used, prompts, manual edits
+├── platform_notes.md               Platform and tool specification
 ├── docs/
-│   ├── final_report.pdf         Phase 3 final report
-│   ├── architecture_diagram.pdf System architecture
-│   ├── project_summary.pdf      Standalone project summary
-│   └── screenshots/             4–8 captioned screenshots + index
+│   ├── final_report.pdf            Phase 3 final report
+│   ├── architecture_diagram.pdf    System architecture
+│   ├── project_summary.pdf         Standalone project summary
+│   └── screenshots/                4–8 captioned screenshots + index
 ├── eval/
-│   ├── test_cases.csv           42 test scenarios with results
-│   ├── evaluation_results.csv   Aggregated outcomes
-│   ├── failure_log.md           Five documented failure cases
-│   └── version_notes.md         Iteration history
+│   ├── test_cases.csv              42 test scenarios with results
+│   ├── evaluation_results.csv      Aggregated outcomes
+│   ├── failure_log.md              Five documented failure cases
+│   └── version_notes.md            Iteration history
 ├── outputs/
-│   ├── demo_outputs/            Prototype interaction examples
-│   ├── exported_artifacts/      Sample agent outputs
-│   └── sample_runs/             Walkthrough recordings
+│   ├── demo_outputs/               Prototype interaction examples
+│   ├── exported_artifacts/         Sample agent outputs
+│   └── sample_runs/                Walkthrough recordings
 ├── media/
-│   ├── demo_video_link.txt      Link to 5-minute project video
-│   └── figma_prototype_link.txt Link to interactive prototype
+│   ├── demo_video_link.txt         Link to 5-minute project video
+│   └── figma_prototype_link.txt    Link to interactive prototype
 └── phase_submissions/
-├── phase1/                  Scoping & justification
-├── phase2/                  Architecture, prototype, evaluation plan
-└── phase3/                  Final submission materials
+    ├── phase1/                     Scoping & justification
+    ├── phase2/                     Architecture, prototype, evaluation plan
+    └── phase3/                     Final submission materials
+```
 
 ## Evaluation materials
 
