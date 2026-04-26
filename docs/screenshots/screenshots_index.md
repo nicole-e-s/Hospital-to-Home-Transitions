@@ -300,7 +300,7 @@ Demonstrates the chatbot in its answered state, showing how Agent A's structured
 ---
 
 ## Screenshot 20
-**screenshot_file:** `Appointment_Requested_18.png`
+**screenshot_file:** `Appointment_Requested_20.png`
 
 **what_it_shows:**
 The provider page with a browser-level confirmation dialog overlaid: "An embedded page at [Figma URL] says: Appointment request sent for Dr. Michael Rodriguez — OK." The underlying screen shows the Follow-Up Care page with Dr. Michael Rodriguez's card (Cardiology, 2.3 miles away, $45 copay in-network, next available April 14 2:00 PM) and Dr. Emily Watson partially visible below.
@@ -316,7 +316,7 @@ Demonstrates the appointment request interaction at the point where the patient 
 ---
 
 ## Screenshot 21
-**screenshot_file:** `help_screen_20.png`
+**screenshot_file:** `help_screen_21.png`
 
 **what_it_shows:**
 The "Help & Support" screen (Help tab active in navigation). Three sections: (1) "Contact care team" — "Call: (555) 123-4567" (green button) and "Send a message" (outlined button); (2) "Emergency" — "If you experience severe symptoms, call 911 immediately." with a red "Call 911" button; (3) "Resources" — four links: View discharge instructions, Medication information, Activity guidelines, FAQs. The chat assistant FAB is visible.
@@ -331,7 +331,7 @@ Demonstrates the system's core safety principle: the patient always has a direct
 ---
 
 ## Screenshot 22
-**screenshot_file:** `Care_Coordinator_Landing_Page_21.png`
+**screenshot_file:** `Care_Coordinator_Landing_Page_22.png`
 
 **what_it_shows:**
 The staff-facing "Patient triage queue" screen, dated Saturday April 11, 2026. A filter row allows sorting by All / Red / Yellow / Green. Four patient cards are visible: Margaret Chen, 72 (RED badge — "Severe chest pain reported," flagged 2 hours ago, last check-in Today 10:15 AM); Robert Williams, 68 (RED badge — "Breathing difficulty = 5," flagged 45 minutes ago, last check-in Today 12:30 PM); Sarah Martinez, 65 (YELLOW badge — "3-day dizziness trajectory," flagged 3 hours ago, last check-in Today 9:45 AM); James Thompson, 71 (YELLOW badge, partially visible). An Orchestrator + Agent B sticky note is open: Data Model — `patients[] { id, name, age, latestCheckIn, escalationHistory[], severity }`; Navigation Trigger — staff opens triage queue → Orchestrator fetches all active patients → sorts by severity (red → yellow → green) → orders by flaggedTime; Display vs. Computed — Display: patient cards sorted red-first. Computed: Orchestrator queries database → Agent B provides severity for each patient → Orchestrator sorts and renders.
@@ -347,7 +347,7 @@ This is the central command view for clinical staff. The severity-sorted queue d
 ---
 
 ## Screenshot 23
-**screenshot_file:** `Patient_Level_Info_Screeb_22.png`
+**screenshot_file:** `Patient_Level_Info_Screeb_23.png`
 
 **what_it_shows:**
 Margaret Chen's individual patient detail page in the staff view. Header: "Margaret Chen, 72 — Cardiac surgery (CABG) — RED — Flagged 2 hours ago." Two action buttons: "Mark as reviewed" and "Contact patient." A "Medication and care plan context" section lists current medications (Lisinopril 10mg once daily ACE inhibitor; Aspirin 81mg once daily with food; Atorvastatin 20mg once daily at bedtime; Metoprolol 25mg twice daily beta-blocker) with a yellow warning box: "Note: Beta-blocker may explain mild fatigue but should not cause acute chest pain or severe breathing difficulty." The beginning of a "Structured assessment" section is visible at the bottom.
@@ -363,7 +363,7 @@ Shows Agent A's medication data cross-referenced with Agent B's contradicting in
 ---
 
 ## Screenshot 24
-**screenshot_file:** `More_Patient_Level_Info_23.png`
+**screenshot_file:** `More_Patient_Level_Info_24.png`
 
 **what_it_shows:**
 Margaret Chen's detail page scrolled to show the full "Structured assessment" section (Agent B's JSON output rendered in readable form): Reported symptoms: "Severe breathing difficulty (5/5), strong chest pain, moderate swelling." Expected indicators: "Mild fatigue from beta-blocker, gradual improvement in mobility." Contradicting indicators: "Acute worsening of respiratory and cardiac symptoms not explained by current medications." Severity: "RED — Immediate attention required." Escalation reason: "Red flag symptoms (breathing = 5, chest pain = strong)." An Agent B sticky note is open to the right with full data model, navigation trigger, and Display vs. Computed annotation.
@@ -379,7 +379,7 @@ This is the most clinically detailed screenshot in the prototype, showing Agent 
 ---
 
 ## Screenshot 25
-**screenshot_file:** `More_patient_info_24.png`
+**screenshot_file:** `More_patient_info_25.png`
 
 **what_it_shows:**
 Margaret Chen's detail page scrolled to show the "Recommended action" section. A red-bordered card reads: "Recommended action — Nurse contact recommended immediately. Consider same-day evaluation for possible post-operative complications (PE, cardiac event, infection)." Two action buttons in red: "Call patient now" and "Send to ER." The escalation reason ("Red flag symptoms — breathing = 5, chest pain = strong") is partially visible at the top.
@@ -395,7 +395,7 @@ Shows the highest-severity clinical action surface in the prototype. The "Call p
 ---
 
 ## Screenshot 26
-**screenshot_file:** `More_patient_info_25.png`
+**screenshot_file:** `More_patient_info_26.png`
 
 **what_it_shows:**
 Margaret Chen's detail page showing the "7-day symptom trajectory" chart for the staff view. Seven colored circles: Mon (green), Tue (green), Wed (yellow/orange), Thu (green), Fri (green), Sat (yellow/orange), Sun (red). Three day-level drill-downs: Fri — green dot, Breathing: 1, Pain: 1, Swelling: 1; Sat — yellow dot, Breathing: 3, Pain: 2, Swelling: 2; Sun — red dot, Breathing: 5, Pain: Strong, Swelling: 3.
@@ -411,7 +411,7 @@ This is the staff-facing episodic memory visualization that enables trajectory-b
 ---
 
 ## Screenshot 27
-**screenshot_file:** `More_Patient_info_26.png`
+**screenshot_file:** `More_Patient_info_27.png`
 
 **what_it_shows:**
 Margaret Chen's detail page showing a "Why this was flagged" plain-language reasoning section. Text reads: "Patient reported severe breathing difficulty (5/5) and strong chest pain during today's check-in. This represents a significant worsening from yesterday's assessment. Beta-blocker may explain some fatigue, but acute chest pain and severe dyspnea are not expected at this stage of recovery." Two tag chips: "Symptom trajectory" and "Contradicting indicator." The beginning of the "7-day symptom trajectory" section is visible below. An Agent B sticky note is open to the right with the full data model, navigation trigger, and Display vs. Computed annotation.
