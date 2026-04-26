@@ -4,7 +4,7 @@
 **Prototype Tool:** Figma Make
 **Report Referenced:** Phase 3 Final Report (Failure Analysis & Evaluation)
 
-###**Note:** Screenshots are numbered 1-27 in the order of the prototype flow
+### **Note:** Screenshots are numbered 1-27 in the order of the prototype flow
 ---
 
 ## How to Read This Index
