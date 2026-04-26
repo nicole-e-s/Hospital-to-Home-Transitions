@@ -1,21 +1,9 @@
-# Screenshot Index — Post-Discharge Care Companion Prototype
-**Project:** A Multi-Agent Framework for Safe Hospital-to-Home Transitions
-**Team:** Anshika Shukla, Nicole Sanna, Nicole Zhou, Yuhang Zhou
+# Screenshot Index
 **Prototype Tool:** Figma Make
-**Report Referenced:** Phase 3 Final Report (Failure Analysis & Evaluation)
+
 #### **Screenshots Folder:** [View all screenshots on GitHub](https://github.com/nicole-e-s/Hospital-to-Home-Transitions/tree/main/docs/screenshots)
 
 ### **Note:** Screenshots are numbered 1-27 in the order of the prototype flow
----
-
-## How to Read This Index
-
-Each entry follows this structure:
-- **screenshot_file** — filename as submitted
-- **what_it_shows** — description of the screen's content and visible UI elements
-- **why_it_matters** — clinical, architectural, or evaluative significance
-- **where_it_is_discussed_in_the_report** — specific section(s) in the Phase 3 Final Report
-
 ---
 
 ## Screenshot 1
