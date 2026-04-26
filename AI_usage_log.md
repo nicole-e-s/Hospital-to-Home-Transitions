@@ -1,6 +1,5 @@
 # AI Usage Log
-
-* **For Evaluation Part**
+**For Evaluation Part**
 * **Tool name and version:** Gemini Advanced (Gemini 3.1 Pro)
 * **What you used it for:** To operationalize my conceptual evaluation framework by structuring, expanding, and formatting the test case matrix and evaluation results. I used it to translate my baseline assumptions and ideas into highly detailed, synthetic clinical scenarios.
 * **Exact prompt or task given to the tool:** "Based on my defined system architecture, assumptions, and the CLASSic evaluation framework, expand my initial test case scenarios into more comprehensive test cases. Generate realistic clinical inputs (patient quotes/data) and define strict success/failure criteria for each. Map these outcomes to specific evaluation metrics, covering Happy Paths, Alternate Paths, and complex Edge Cases."
