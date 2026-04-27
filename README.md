@@ -79,7 +79,7 @@ This project was built on **Track B** (low-code/no-code prototype), which meant 
 
 The reuse map:
 
-| File | Canonical location | Also appears in | Why |
+| File | Original location | Also appears in | Why |
 |---|---|---|---|
 | `Test_Cases.csv` (eval) / `Final_Test Cases.csv` (data, outputs) | `eval/` | `data/raw/`, `outputs/sample_runs/` | The 42 test scenarios *are* our raw data inputs (synthetic discharge text, simulated check-ins, demographic variants), and walking through them constitutes our sample runs. |
 | `Agentic_Traces.json` | `eval/` | `data/processed/` | The traces capture the simulated agent execution path for each test case — i.e., the transformed/structured output of processing the raw test inputs through the specified agent logic. |
