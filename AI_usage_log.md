@@ -81,7 +81,7 @@ Card:
 Title: “Delivery available”
 Text: “Some medications may be delivered to your home”
 Button: “Check delivery options”
-3. Chatbox Integration (IMPORTANT)
+3. Chatbox Integration
 
 Update the chat assistant behavior:
 
