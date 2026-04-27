@@ -44,10 +44,12 @@ team-project/
 │   ├── project_summary.pdf         Standalone project summary
 │   └── screenshots/                4–8 captioned screenshots + index
 ├── eval/
-│   ├── test_cases.csv              42 test scenarios with results
-│   ├── evaluation_results.csv      Aggregated outcomes
-│   ├── failure_log.md              Five documented failure cases
-│   └── version_notes.md            Iteration history
+│   ├── Test_Cases.csv              42 test scenarios with initial behaviors
+│   ├── Agentic_Traces.json              42 test traces records
+│   ├── Initial_Evaluation_Results.csv      Aggregated outcomes before iteration
+│   ├── Final_v1.2_Evaluation_Results.csv      Final Aggregated outcomes after iterations
+│   ├── Failure_Log.md              All failure cases
+│   └── Version_Notes.md            Iteration history
 ├── outputs/
 │   ├── demo_outputs/               Prototype interaction examples
 │   ├── exported_artifacts/         Sample agent outputs
