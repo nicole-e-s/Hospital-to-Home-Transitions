@@ -15,3 +15,111 @@
   - "Can you make a 'List of submitted files and folders' for the final report"
 * **What you changed manually afterward:** I accepted Claude's instructions to set up the Github and troubleshoot issues.
 * **What you verified independently:** I verified that the instructions were correct by checking the structure and formatting after committing and cerified that the list of submitted files and folders were correct.
+
+* **For Figma*
+* **Tool name and version:** Sonnet 4.6
+* **What you used it for:** To help with front end generation
+* **Exact prompts given to the tool:**
+* - “Extend the “Recovery Companion” healthcare app by adding a Medication Pickup and Refill interface. The design should feel consistent with the existing care workflow: calm, structured, and easy for older adults to use.
+
+📱 Screen — Medication Pickup / Refill
+
+Purpose:
+Allow patients to see where to pick up medications, track refill status, and request help if needed.
+
+1. Entry Point (from Home Screen)
+
+Add a small link under “Today’s Medications”:
+
+Text: “Pickup & refill details”
+Tapping opens a new screen: Medication Pickup
+2. Medication Pickup Screen Layout
+Header
+Title: “Medication Pickup”
+Subtitle: “Your prescriptions and pharmacy details”
+Section 1 — Ready for Pickup
+Card title: “Ready for pickup”
+For each medication:
+Medication name (bold)
+Status tag: “Ready” (green)
+Pharmacy name + address
+Pickup window (e.g., “Available until April 28”)
+Button: “Get directions”
+Section 2 — In Progress / Refill Needed
+Card title: “Refill needed”
+Each item:
+Medication name
+Status tag: “Refill required” (amber)
+Last refill date
+Button: “Request refill”
+Section 3 — Pharmacy Info
+Card:
+Pharmacy name (e.g., UPMC Pharmacy)
+Address
+Phone number
+Hours
+Button: “Call pharmacy”
+Section 4 — Delivery Option (optional but strong)
+Card:
+Title: “Delivery available”
+Text: “Some medications may be delivered to your home”
+Button: “Check delivery options”
+3. Chatbox Integration (IMPORTANT)
+
+Update the chat assistant behavior:
+
+Suggested prompts:
+
+“Where do I pick up my medication?”
+“Is my prescription ready?”
+“Help me refill my medication”
+
+Chat responses should:
+
+Pull structured data from care plan + pharmacy info
+Provide short answers:
+“Your Metoprolol is ready at UPMC Pharmacy.”
+Include action buttons:
+“View pickup details”
+“Call pharmacy”
+
+If user says:
+“I ran out of medication”
+
+→ Chat should respond:
+
+“I can help you request a refill.”
+Button: “Request refill”
+4. Design Style (match existing system)
+Same card layout and spacing as “Today’s Plan”
+Status colors:
+Green = ready
+Amber = refill needed
+Gray = processing
+Large readable buttons
+No clutter, no dense text
+5. Agent System Mapping (for annotation in Figma)
+
+Add notes in your design:
+
+Medication data comes from Agent A (care plan extraction)
+Refill status could be:
+Prototype: static / mock data
+Production: pharmacy API integration
+Chatbox = navigation + retrieval layer, not decision-make”
+- “Add sticky notes outside of the phone screen explaining. You should have an icon, when press it, the sticky note explaning the agent will show 
+
+Which backend agent populates this content
+What data model field maps to each UI element
+What triggers navigation or state change
+What the system displays vs. what the agent actually computed
+
+This makes the prototype reviewable by engineers, clinicians, and evaluators — not just designers.
+
+Agent mapping quick reference
+Agent A (Schedule Planner): Home screen medications, appointments, activity/diet cards
+Agent B (Symptom Evaluator): Check-in result screen, escalation banners, History trend, staff detail page sections 1–4
+Agent C (Insurance Liaison): Provider options in staff detail section 5 (only when triggered)
+Orchestrator: Determines which screens are reachable and which agents activate — not visible in UI, but drives all routing logic“
+* **What you changed manually afterward:** I manually directed UI refinements throughout the design process, including page layout and structure, screen functionality and interaction flow, color theme and visual hierarchy, button placement and labeling, banner design and escalation indicators, and stakeholder-specific views (patient app vs. nurse dashboard).
+* **What you verified independently:** I independently verified that the UI was user-friendly, visually clear, and aligned with the intended use case — evaluating whether the patient-facing screens were appropriately simple and non-clinical, whether the escalation flags were prominent and actionable, and whether the nurse dashboard accurately reflected the system's triage logic.
