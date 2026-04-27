@@ -20,6 +20,29 @@
 * **Tool name and version:** Sonnet 4.6
 * **What you used it for:** To help with front end generation
 * **Exact prompts given to the tool:**
+* Design a high-fidelity interactive prototype for the Post-Discharge Care Companion, a multi-agent AI system that supports patients during hospital-to-home recovery. The prototype should operationalize agentic concepts (persistent memory, autonomous monitoring, multi-agent coordination, human-in-the-loop escalation) through lived patient experience — not feature lists or dashboards.
+ 
+Screen 1 — Discharge Onboarding (Schedule Planner Agent) A warm, accessible welcome screen addressed to the patient by first name. Display a plain-language summary of their discharge plan (e.g., medications, activity restrictions, follow-up dates), translated from clinical language into simple instructions. Include a large "Confirm I Understand" button and a secondary "Read to Me" accessibility option. Annotate this screen: "Agent action: Parses discharge PDF → builds structured care plan → stores in patient memory"
+ 
+Screen 2 — Daily Check-In (Symptom Evaluator Agent) A conversational interface that appears each morning. Show 3–4 symptom questions (e.g., "How is your breathing today?" with a visual scale from 1–5; "Did you take your morning medications?"). Design this as a branching decision flow — depending on answers, route to one of three outcomes:
+•	Path A (All clear): Affirming message + view today's care plan
+•	Path B (Mild concern): Gentle flag + add-on instruction (e.g., "Rest more today, check in again at 3pm")
+•	Path C (High-risk pattern): Urgent escalation screen (Screen 4)
+Annotate: "Agent action: Evaluates symptoms against risk thresholds → updates patient state → triggers conditional routing"
+Screen 3 — Care Plan View (Schedule Planner Agent) A clean daily timeline showing medications (with times and dosage), activity goals, and a follow-up appointment card. Include a "Mark as Done" interaction for each task. Show a subtle streak/adherence indicator (e.g., "3 days on track"). Include an inline nudge for a missed medication with a reschedule option. Annotate: "Agent action: Reads patient memory → renders personalized plan → logs completions → adjusts reminders based on patterns"
+Screen 4 — Escalation Alert (Human-in-the-Loop) Triggered from Path C in Screen 2. Display a high-contrast urgent screen with: a plain-language summary of what symptoms triggered the alert, a reassuring patient message ("Your care team has been notified"), and a live status card showing: "Nurse [Name] reviewing your case — expected response in 15 min." Include a secondary action: "Call 911 if symptoms are severe." Show a parallel view (caregiver/nurse perspective) as an annotation sidebar — what the clinical stakeholder receives. Annotate: "Agent action: Escalation agent fires → notifies care coordinator → logs event → pauses autonomous check-in loop"
+ 
+Screen 5 — Insurance & Follow-Up Coordination (Insurance Liaison Agent) After escalation resolves or from the care plan view, show a proactive screen: "Your care team suggests a follow-up with a cardiologist within 7 days. Here are in-network options near you." Display 2–3 provider cards with name, distance, estimated cost, and availability. Include one-tap "Request Appointment" and "See Insurance Details" actions. Annotate: "Agent action: Queries provider directory → filters by insurance network → pre-populates appointment request → reduces patient cognitive burden"
+ 
+Screen 6 — Weekly Reflection & Outcome Summary A gentle end-of-week wrap-up screen showing adherence stats (medications taken, check-ins completed), a short prompt ("What felt hardest this week?"), and a visual trend of symptom patterns over 7 days. Include a "Share with Doctor" button that generates a summary PDF. Annotate: "Agent action: Aggregates longitudinal state → surfaces patterns → prepares handoff summary for clinical review"
+ 
+Design Requirements:
+•	Primary users: elderly patients with low health literacy → use large text (min 18pt), plain language, high contrast, large touch targets
+•	Color system: calm and clinical — use soft blues and teals for safe states, warm amber for mild alerts, coral/red only for urgent escalation
+•	Show connector arrows between all screens with branch labels ("if high-risk → Screen 4", "if resolved → Screen 3")
+•	Add a floating annotation layer on each screen labeling which agent is active, what memory it reads, and what action it triggers
+•	Include a component sidebar with reusable elements: symptom scale, medication card, provider card, alert banner, status indicator
+•	Mobile-first layout (390px wide), iOS-style navigation with a persistent bottom nav bar showing: Home, Check-In, Care Plan, Messages
 * - “Extend the “Recovery Companion” healthcare app by adding a Medication Pickup and Refill interface. The design should feel consistent with the existing care workflow: calm, structured, and easy for older adults to use.
   - Purpose:
 Allow patients to see where to pick up medications, track refill status, and request help if needed.
