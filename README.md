@@ -62,6 +62,9 @@ team-project/
     ├── phase2/                     Architecture, prototype, evaluation plan
     └── phase3/                     Final submission materials
 ```
+### A note on file organization
+
+This project was built on **Track B** (low-code/no-code prototype), which meant our work did not produce traditional input/output data pipelines. The course allowed Track B teams to scope the data component accordingly. To populate the expected folder structure without fabricating artifacts, several files appear in multiple locations. Each file is identical across locations; we duplicated rather than symlinked so every folder a grader opens is populated.
 
 ## Evaluation materials
 
