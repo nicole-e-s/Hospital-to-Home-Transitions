@@ -53,9 +53,9 @@ These specifications come from the Phase 2 Tools, Memory, and Data Design sectio
 
 ## Evaluation Tooling
 
-- 42 simulated clinical trajectories spanning happy paths, alternate paths, and edge cases (including adversarial prompt injections, API crashes, and patient deception scenarios). See `eval/test_cases.csv`.
+- 42 simulated clinical trajectories spanning happy paths, alternate paths, and edge cases (including adversarial prompt injections, API crashes, and patient deception scenarios). See `eval/Test_Cases.csv`.
 - Agent execution traces in `eval/agentic_traces.json`.
-- Aggregated outcomes in `eval/evaluation_results.csv`.
+- Final Aggregated outcomes in `eval/Final_v1.2_Eevaluation_Results.csv`.
 - Evaluation governed by the CLASSic framework (Cost, Latency, Accuracy, Security, Stability).
 
 ## Scope Boundaries of the Prototype
