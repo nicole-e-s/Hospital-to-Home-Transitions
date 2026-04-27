@@ -21,16 +21,10 @@
 * **What you used it for:** To help with front end generation
 * **Exact prompts given to the tool:**
 * - “Extend the “Recovery Companion” healthcare app by adding a Medication Pickup and Refill interface. The design should feel consistent with the existing care workflow: calm, structured, and easy for older adults to use.
-
-📱 Screen — Medication Pickup / Refill
-
-Purpose:
+  - Purpose:
 Allow patients to see where to pick up medications, track refill status, and request help if needed.
-
 1. Entry Point (from Home Screen)
-
 Add a small link under “Today’s Medications”:
-
 Text: “Pickup & refill details”
 Tapping opens a new screen: Medication Pickup
 2. Medication Pickup Screen Layout
@@ -85,8 +79,7 @@ Include action buttons:
 
 If user says:
 “I ran out of medication”
-
-→ Chat should respond:
+Chat should respond:
 
 “I can help you request a refill.”
 Button: “Request refill”
@@ -107,6 +100,7 @@ Refill status could be:
 Prototype: static / mock data
 Production: pharmacy API integration
 Chatbox = navigation + retrieval layer, not decision-make”
+
 - “Add sticky notes outside of the phone screen explaining. You should have an icon, when press it, the sticky note explaning the agent will show 
 
 Which backend agent populates this content
@@ -121,5 +115,6 @@ Agent A (Schedule Planner): Home screen medications, appointments, activity/diet
 Agent B (Symptom Evaluator): Check-in result screen, escalation banners, History trend, staff detail page sections 1–4
 Agent C (Insurance Liaison): Provider options in staff detail section 5 (only when triggered)
 Orchestrator: Determines which screens are reachable and which agents activate — not visible in UI, but drives all routing logic“
+
 * **What you changed manually afterward:** I manually directed UI refinements throughout the design process, including page layout and structure, screen functionality and interaction flow, color theme and visual hierarchy, button placement and labeling, banner design and escalation indicators, and stakeholder-specific views (patient app vs. nurse dashboard).
 * **What you verified independently:** I independently verified that the UI was user-friendly, visually clear, and aligned with the intended use case — evaluating whether the patient-facing screens were appropriately simple and non-clinical, whether the escalation flags were prominent and actionable, and whether the nurse dashboard accurately reflected the system's triage logic.
