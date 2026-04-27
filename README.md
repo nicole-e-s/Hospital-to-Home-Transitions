@@ -34,37 +34,56 @@ The architecture specification names the LLMs, APIs, and tools that a production
 
 ## Folder guide
 ```
-team-project/
-├── README.md                       This file
-├── AI_USAGE.md                     AI tools used, prompts, manual edits
-├── platform_notes.md               Platform and tool specification
+Hospital-to-Home-Transitions/
+├── README.md                                     This file
+├── AI_USAGE.md                                   AI tools used, prompts, manual edits
+├── platform_notes.md                             Platform and tool specification
+├── app/
+│   └── figma_prototype_link.txt                  Link to interactive Figma prototype
+├── data/
+│   ├── raw/
+│   │   └── Final_Test Cases.csv                  42 test scenarios (raw inputs)
+│   └── processed/
+│       └── Agentic_Traces.json                   42 test execution traces
 ├── docs/
-│   ├── final_report.pdf            Phase 3 final report
-│   ├── architecture_diagram.pdf    System architecture
-│   ├── project_summary.pdf         Standalone project summary
-│   └── screenshots/                4–8 captioned screenshots + index
+│   ├── final_report.pdf                          Phase 3 final report
+│   ├── Agent_Architecture_Diagram.pdf            System architecture diagram
+│   ├── Project_Summary.pdf                       Standalone project summary
+│   └── screenshots/                              Captioned screenshots + index
 ├── eval/
-│   ├── Test_Cases.csv              42 test scenarios with initial behaviors
-│   ├── Agentic_Traces.json              42 test traces records
-│   ├── Initial_Evaluation_Results.csv      Aggregated outcomes before iteration
-│   ├── Final_v1.2_Evaluation_Results.csv      Final Aggregated outcomes after iterations
-│   ├── Failure_Log.md              All failure cases
-│   └── Version_Notes.md            Iteration history
+│   ├── Test_Cases.csv                            42 test scenarios with initial behaviors
+│   ├── Agentic_Traces.json                       42 test execution traces
+│   ├── Initial_Evaluation_Results.csv            Aggregated outcomes before iteration
+│   ├── Final_v1.2_Evaluation_Results.csv         Final aggregated outcomes after iterations
+│   ├── Failure_Log.md                            Documented failure cases
+│   └── Version_Notes.md                          Iteration history
 ├── outputs/
-│   ├── demo_outputs/               Prototype interaction examples
-│   ├── exported_artifacts/         Sample agent outputs
-│   └── sample_runs/                Walkthrough recordings
+│   ├── demo_outputs/
+│   │   └── Final_v1.2_Evaluation_Results.csv     Demonstrative interaction outputs
+│   ├── exported_artifacts/
+│   │   ├── export_example_nurse-summary.pdf      Sample nurse-facing agent output
+│   │   └── export_example_patient-summary.pdf    Sample patient-facing agent output
+│   └── sample_runs/
+│       └── Final_Test Cases.csv                  Walkthrough of test scenarios
 ├── media/
-│   ├── demo_video_link.txt         Link to 5-minute project video
-│   └── figma_prototype_link.txt    Link to interactive prototype
+│   ├── demo_video_link.txt                       Link to 5-minute project video
+│   └── figma_prototype_link.txt                  Link to interactive prototype
 └── phase_submissions/
-    ├── phase1/                     Scoping & justification
-    ├── phase2/                     Architecture, prototype, evaluation plan
-    └── phase3/                     Final submission materials
+    ├── phase1/                                   Scoping & justification
+    ├── phase2/                                   Architecture, prototype, evaluation plan
+    └── phase3/                                   Final submission materials
 ```
 ### A note on file organization
 
 This project was built on **Track B** (low-code/no-code prototype), which meant our work did not produce traditional input/output data pipelines. The course allowed Track B teams to scope the data component accordingly. To populate the expected folder structure without fabricating artifacts, several files appear in multiple locations. Each file is identical across locations; we duplicated rather than symlinked so every folder a grader opens is populated.
+
+The reuse map:
+
+| File | Canonical location | Also appears in | Why |
+|---|---|---|---|
+| `Test_Cases.csv` (eval) / `Final_Test Cases.csv` (data, outputs) | `eval/` | `data/raw/`, `outputs/sample_runs/` | The 42 test scenarios *are* our raw data inputs (synthetic discharge text, simulated check-ins, demographic variants), and walking through them constitutes our sample runs. |
+| `Agentic_Traces.json` | `eval/` | `data/processed/` | The traces capture the simulated agent execution path for each test case — i.e., the transformed/structured output of processing the raw test inputs through the specified agent logic. |
+| `Final_v1.2_Evaluation_Results.csv` | `eval/` | `outputs/demo_outputs/` | Our evaluation cases double as our demos for a Track B prototype; the aggregated results are the clearest "outputs" the system produces. |
 
 ## Evaluation materials
 
