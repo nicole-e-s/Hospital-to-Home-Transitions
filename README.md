@@ -82,8 +82,9 @@ The reuse map:
 
 | File | Original location | Also appears in | Why |
 |---|---|---|---|
-| `Test_Cases.csv` (eval) / `Final_Test Cases.csv` (data, outputs) | `eval/` | `data/raw/`, `outputs/sample_runs/` | The 42 test scenarios *are* our raw data inputs (synthetic discharge text, simulated check-ins, demographic variants), and walking through them constitutes our sample runs. |
+| `Test_Cases.csv` (eval) | `eval/` | `data/raw/`, `outputs/sample_runs/` | The 42 test scenarios *are* our raw data inputs (synthetic discharge text, simulated check-ins, demographic variants), and walking through them constitutes our sample runs. |
 | `Agentic_Traces.json` | `eval/` | `data/processed/` | The traces capture the simulated agent execution path for each test case — i.e., the transformed/structured output of processing the raw test inputs through the specified agent logic. |
+| `Initial_Evaluation_Results.csv` | `eval/` | `sample/runs/` | The initial results are generated from our initial version with test cases as first try. |
 | `Final_v1.2_Evaluation_Results.csv` | `eval/` | `outputs/demo_outputs/` | Our evaluation cases double as our demos for a Track B prototype; the aggregated results are the clearest "outputs" the system produces. |
 
 ## Evaluation materials
