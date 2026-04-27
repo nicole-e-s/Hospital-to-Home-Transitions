@@ -16,7 +16,7 @@
 * **What you changed manually afterward:** I accepted Claude's instructions to set up the Github and troubleshoot issues.
 * **What you verified independently:** I verified that the instructions were correct by checking the structure and formatting after committing and cerified that the list of submitted files and folders were correct.
 
-* **For Figma*
+**For Figma**
 * **Tool name and version:** Sonnet 4.6
 * **What you used it for:** To help with front end generation
 * **Exact prompts given to the tool:**
@@ -100,7 +100,6 @@ Refill status could be:
 Prototype: static / mock data
 Production: pharmacy API integration
 Chatbox = navigation + retrieval layer, not decision-make”
-
 - “Add sticky notes outside of the phone screen explaining. You should have an icon, when press it, the sticky note explaning the agent will show 
 
 Which backend agent populates this content
