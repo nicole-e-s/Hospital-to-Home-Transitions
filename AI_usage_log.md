@@ -100,7 +100,7 @@ Refill status could be:
 Prototype: static / mock data
 Production: pharmacy API integration
 Chatbox = navigation + retrieval layer, not decision-make”
-* - “Add sticky notes outside of the phone screen explaining. You should have an icon, when press it, the sticky note explaning the agent will show 
+- “Add sticky notes outside of the phone screen explaining. You should have an icon, when press it, the sticky note explaning the agent will show 
 
 Which backend agent populates this content
 What data model field maps to each UI element
@@ -115,7 +115,7 @@ Agent B (Symptom Evaluator): Check-in result screen, escalation banners, History
 Agent C (Insurance Liaison): Provider options in staff detail section 5 (only when triggered)
 Orchestrator: Determines which screens are reachable and which agents activate — not visible in UI, but drives all routing logic“
 
-- put all purple modules, such as 
+- “put all purple modules, such as 
 
 Agent: Symptom Evaluator Agent
 Evaluates symptoms against risk thresholds → updates patient state → triggers conditional routing
@@ -124,7 +124,14 @@ Baseline vitals, symptom history, risk factors
 
 Routes to affirmation, mild concern, or urgent escalation
 
-on the left or grey empty area. Do not put it on the bottom which blocks the view
+on the left or grey empty area. Do not put it on the bottom which blocks the view”
+
+- “it sould be exactly for phone screen, make the bottom stuff gone, or appear outside of the app design layout.
+
+Agent: Symptom Evaluator Agent
+Evaluates symptoms against risk thresholds - updates patient state - triggers conditional routing
+
+Baseline vitals, symptom history, risk factors”
 
 * **What you changed manually afterward:** I manually directed UI refinements throughout the design process, including page layout and structure, screen functionality and interaction flow, color theme and visual hierarchy, button placement and labeling, banner design and escalation indicators, and stakeholder-specific views (patient app vs. nurse dashboard).
 * **What you verified independently:** I independently verified that the UI was user-friendly, visually clear, and aligned with the intended use case — evaluating whether the patient-facing screens were appropriately simple and non-clinical, whether the escalation flags were prominent and actionable, and whether the nurse dashboard accurately reflected the system's triage logic.
