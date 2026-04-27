@@ -1,6 +1,70 @@
-# Platform Notes
+# Platform and Tool Specification
 
-This project was built on the following platforms. No local code environment is required to review it.
+This document specifies the platforms, tools, and services involved in the Post-Discharge Care Companion. Per the assignment, our team selected Track B (low-code/no-code prototype track). Where the prototype uses different design choices than a production system would, both are noted, consistent with the Phase 2 Tools, Memory, and Data Design section.
 
-Figma [link]
+## Prototype Build Platform
 
+**Figma Make** — an AI-assisted design-to-prototype tool, used to render the Phase 2 architecture specification into an interactive prototype. Each prompt to Figma Make was grounded in a specific section of the Phase 2 spec (agent canvases, trigger-to-agent table, four-tier severity rules, escalation routing logic) rather than written from scratch as design ideas. Full prompt history is documented in `AI_USAGE.md`.
+
+The prototype includes:
+- A patient-facing UI (primary stakeholder)
+- A staff/nurse dashboard (secondary stakeholder view)
+- Removable sticky-note annotations mapping agents to screens, embedded in the prototype itself
+- A fully clickable patient journey from login through daily check-in, severity routing, and escalation
+- The four-tier severity logic and the hard-coded red-flag interrupt wired into the check-in flow with no backend
+
+The prototype link is in `media/figma_prototype_link.txt`.
+
+## Specified Tools per Agent
+
+These specifications come from the Phase 2 Tools, Memory, and Data Design section and the Phase 3 Architecture and Design Choices section. They describe what the system *would* use; the prototype renders the user experience around these specifications without executing the agents themselves.
+
+**Shared infrastructure**
+- LLM: GPT-4o (all agents), chosen for support with structured outputs.
+- No LLM is permitted to rely on parametric medical knowledge; every clinical claim must be traceable to a source.
+
+**Agent A (Schedule Planner)**
+- Document parsing: PyMuPDF (deterministic text extraction) followed by GPT-4o (structured interpretation), producing two JSON outputs (scheduled items and reference document with static guidance).
+- Medication reference: OpenFDA Drug Labelling API.
+- Schedule output: rendered in-app in the prototype; production version would integrate a calendar API for push notifications.
+- Production upgrade: supplement OpenFDA with NLM RxNorm API (drug name standardization) and NLM DailyMed API (complete unabridged label text).
+
+**Agent B (Symptom Evaluator)**
+- Assessment: GPT-4o producing a structured JSON assessment.
+- Clinical reference grounding (RAG): FAISS vector store with OpenAI `text-embedding-3-small` embeddings.
+- Prototype RAG corpus: post-cardiac-surgery recovery guidelines from the American Medical Association and UPMC patient education materials.
+- Production RAG corpus: institution-provided clinical protocols (e.g., Schmitt-Thompson nurse telephone triage protocols), version-controlled by the deploying health system.
+- Cross-reference for medication side effects: OpenFDA.
+- Escalation notification — prototype: structured summary on a nurse-facing alert screen. Production: push to EHR inbox or SMS via Twilio.
+
+**Agent C (Insurance Liaison)**
+- Prototype: mock NPPES-style provider database (~10 providers in the UPMC network), filtered by insurance plan and ranked by specialty match and distance.
+- Production: NPPES NPI Registry API + insurer-specific directory APIs + Epic FHIR for real-time scheduling.
+
+**Orchestrator Agent**
+- Deterministic state machine (not an LLM). Routes, validates schemas, and logs.
+- Chosen over an LLM router because routing logic must be auditable and approvable by a clinical team in a clinical context.
+
+## Memory
+
+- Session memory: holds the active check-in conversation; discarded once results are written.
+- Semantic memory: durable patient facts (profile, care plan, medications, insurance).
+- Episodic memory: append-only daily check-in log; Agent B retrieves a 7-day rolling window, an interval grounded in the post-surgical readmission risk literature (Jencks et al., 2009).
+
+## Evaluation Tooling
+
+- 42 simulated clinical trajectories spanning happy paths, alternate paths, and edge cases (including adversarial prompt injections, API crashes, and patient deception scenarios). See `eval/test_cases.csv`.
+- Agent execution traces in `eval/agentic_traces.json`.
+- Aggregated outcomes in `eval/evaluation_results.csv`.
+- Evaluation governed by the CLASSic framework (Cost, Latency, Accuracy, Security, Stability).
+
+## Scope Boundaries of the Prototype
+
+Consistent with the Phase 3 Build Summary, several elements visible in the prototype are pre-populated visualizations rather than computed at runtime: the 7-day trend chart, the chat assistant's responses beyond medication pickup, and the staff dashboard's assessment JSON. The Phase 3 doc explains the rationale: building functional versions would have required real LLM calls and synthetic data pipelines that wouldn't have produced different evidence than the static versions show. Executable agent behavior was instead tested through targeted runs documented in the Evaluation section.
+
+## Out-of-Scope Confirmations (from Phase 1)
+
+- No real clinical data; no PHI.
+- No real EHR or hospital system integration.
+- No HIPAA implementation.
+- No insurance billing, claims processing, or pre-authorization workflows.
