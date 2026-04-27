@@ -2,7 +2,29 @@
 **For Evaluation Part**
 * **Tool name and version:** Gemini Advanced (Gemini 3.1 Pro)
 * **What you used it for:** To operationalize my conceptual evaluation framework by structuring, expanding, and formatting the test case matrix and evaluation results. I used it to translate my baseline assumptions and ideas into highly detailed, synthetic clinical scenarios.
-* **Exact prompt or task given to the tool:** "Based on my defined system architecture, assumptions, and the CLASSic evaluation framework, expand my initial test case scenarios into more comprehensive test cases. Generate realistic clinical inputs (patient quotes/data) and define strict success/failure criteria for each. Map these outcomes to specific evaluation metrics, covering Happy Paths, Alternate Paths, and complex Edge Cases."
+* **Exact prompt or task given to the tool:** "Based on my defined system architecture, assumptions, and the CLASSic evaluation framework, expand my initial test case scenarios into more comprehensive test cases. Generate realistic clinical inputs (patient quotes/data) and define strict success/failure criteria for each. Map these outcomes to specific evaluation metrics, covering Happy Paths, Alternate Paths, and complex Edge Cases." "write it in the format like this:
+
+Orchestrator Agent Decision Logic Failure
+
+Patient message received
+Agent B returned Green · no clinical flags
+
+Pharmacy cross-check
+Not performed · orchestrator did not query  pharmacy source.
+
+Final state written
+Marked Adherent falsely: trusted patient message only"
+
+"Patient's group number was tied to their employer plan. They were laid off 3 weeks post-discharge — group number invalidated. New individual coverage not yet activated. Expected: orchestrator detects gap between old group expiry and new plan activation, treats as uninsured window, flags all dispensing during that window as unverifiable. Actual: insurance status not re-checked after discharge, assumed continuously active.
+
+explain how agent C logic failed"
+
+"Patient says "took Coreg." Pharmacy shows no refill in 30 days.
+
+generate a fake UI and then show the test scenario"
+
+
+
 * **What you changed manually afterward:** I manually reviewed and rewrote various generated clinical input descriptions to ensure they accurately reflected realistic patient phrasing and behavioral nuances. I also strictly guided the iterative revisions of each version, prompting the AI to adjust specific parameters based on failure case analysis, increase granularity, and refine the technical accuracy of the expected behaviors to match my exact project requirements.
 * **What you verified independently:** I independently verified the logical consistency between the generated scenarios and the system's actual technical constraints (e.g., verifying that the confidence score thresholds, latency overrides, and state-tracking logic made sense for our architecture). I also validated the accuracy of the final evaluation criteria and ensured all outputs met rigorous academic and engineering standards before compiling the final matrices.
 
