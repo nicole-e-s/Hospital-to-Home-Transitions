@@ -64,6 +64,7 @@ Hospital-to-Home-Transitions/
 │   │   ├── export_example_nurse-summary.pdf      Sample nurse-facing agent output
 │   │   └── export_example_patient-summary.pdf    Sample patient-facing agent output
 │   └── sample_runs/
+│   │   ├── Initial_Evaluation_Results.csv            Aggregated outcomes before iteration
 │       └── Final_Test Cases.csv                  Walkthrough of test scenarios
 ├── media/
 │   ├── demo_video_link.txt                       Link to 5-minute project video
